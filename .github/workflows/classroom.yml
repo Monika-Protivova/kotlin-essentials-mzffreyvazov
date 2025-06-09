@@ -37,7 +37,7 @@ jobs:
       with:
         test-name: 'Lesson 2: Kotlin Essentials'
         setup-command: ''
-        command: "./gradlew testLesson01"
+        command: "./gradlew testLesson02"
         timeout: 10
         max-score: 20
     - name: 'Lesson 4: Testing'
