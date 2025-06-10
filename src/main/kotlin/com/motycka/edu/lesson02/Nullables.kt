@@ -1,13 +1,10 @@
 package com.motycka.edu.lesson02
 
 fun brewCoffee(coffeeGrams: Double, waterMl: Double, milkMl: Double?, sugarGrams: Double?): String {
-    // Determine if coffee is black or with milk
     val milkDescription = if (milkMl != null && milkMl > 0) "with milk" else "black"
 
-    // Determine if coffee is sweetened or unsweetened
     val sugarDescription = if (sugarGrams != null && sugarGrams > 0) "sweetened" else "unsweetened"
 
-    // Format the return string
     return "Coffee ($coffeeGrams g, $waterMl ml) $milkDescription $sugarDescription"
 }
 
