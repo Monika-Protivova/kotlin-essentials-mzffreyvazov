@@ -21,10 +21,11 @@ val coffeeMenu: List<String> = listOf(
 )
 fun collections() {
     val orders: MutableMap<Int, List<String>> = mutableMapOf()
-    println("Welcome to the Coffee Shop! Here is our menu:")
+    print("Welcome to the Coffee Shop! Here is our menu:\n")
 
     // Print menu items
-    coffeeMenu.forEach { items -> println(items) }
+    // used print() with /n, otherwise it doesn't pass tests
+    coffeeMenu.forEach { items -> print("$items\n") }
 
     val order1 = listOf(ESPRESSO, CAPPUCCINO, CAPPUCCINO, AMERICANO)
     orders[1] = order1
@@ -32,9 +33,9 @@ fun collections() {
     val order2 = listOf(ESPRESSO, DOUBLE_ESPRESSO, FLAT_WHITE)
     orders[2] = order2
 
-    println("Orders placed:")
+        print("Orders placed:\n")
     orders.forEach {
-        println("Order ID: ${it.key}, Items: ${it.value}")
+        print("Order ID: ${it.key}, Items: ${it.value}\n")
     }
 }
 

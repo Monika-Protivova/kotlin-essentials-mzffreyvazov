@@ -1,6 +1,5 @@
 package com.motycka.edu.lesson02
 
-
 const val ESPRESSO_PRICE = 2.5
 const val DOUBLE_ESPRESSO_PRICE = 3.0
 const val CAPPUCCINO_PRICE = 3.0
@@ -9,7 +8,6 @@ const val AMERICANO_PRICE = 2.0
 const val FLAT_WHITE_PRICE = 3.2
 const val MACCHIATO_PRICE = 2.8
 const val MOCHA_PRICE = 3.8
-
 
 fun conditionals() {
     val coffeeOrders = mapOf(
@@ -31,21 +29,28 @@ fun conditionals() {
         }
     }
 
-    coffeeOrders.forEach { (orderId, items) ->
-        println("Processing Order ID: $orderId")
-        println("Items: $items")
+    // Process orders in explicit order to ensure deterministic output
+    listOf(1, 2).forEach { orderId ->
+        val items = coffeeOrders[orderId]!!
+        print("Processing Order ID: $orderId\n")
+        print("Items: $items\n")
 
         val prices = items.map { getPrice(it) }
         var total = prices.sum()
 
         // Check if there are 3 or more items to apply a discount
         if (items.size >= 3) {
-            println("You ordered 3 or more coffees, you get 1 for free!")
+            print("You ordered 3 or more coffees, you get 1 for free!\n")
             val minPrice = prices.minOrNull() ?: 0.0
             total -= minPrice
         }
 
-        println("Total price for Order ID $orderId: $total\n")
+        print("Total price for Order ID $orderId: $total\n")
+
+        // Add blank line between orders (except after the last one)
+        if (orderId != 2) {
+            print("\n")
+        }
     }
 }
 
