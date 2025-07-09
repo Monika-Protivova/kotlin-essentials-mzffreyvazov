@@ -14,6 +14,9 @@ object TemperatureConverter {
      *
      * @param fahrenheit temperature value in Fahrenheit
      * @return temperature value in Celsius
+     *
+     * The conversion formula is:
+     *   Celsius = (Fahrenheit - 32) * 5 / 9
      * @see <a href="https://en.wikipedia.org/wiki/Fahrenheit">Fahrenheit</a>
      * @see <a href="https://en.wikipedia.org/wiki/Celsius">Celsius</a>
      */
